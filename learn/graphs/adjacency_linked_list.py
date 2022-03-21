@@ -27,38 +27,15 @@ class Graph:
                     print('-> {}' . format(temp.vertex))
                     temp = temp.next
     
-    def bfs(self, vertex):
-        visited = [False] * self.vertices
-        queue = []
-
-        queue.append(vertex)
-        visited[vertex] = True
-
-        while queue:
-            popped = queue.pop(0)
-            print(popped)
-            if self.graphArray[popped]:
-                temp = self.graphArray[popped]
-                result = temp.vertex
-                while temp:
-                    if visited[result]:
-                       temp = temp.next
-                    else:
-                        visited[result] = True
-                        queue.append(result)
-                        temp = temp.vertex
-        
-
-graph = Graph(5)
+graph = Graph(6)
 graph.add_edge(0, 1)
-graph.add_edge(0, 4)
-graph.add_edge(1, 2)
-graph.add_edge(1, 3)
-graph.add_edge(1, 4)
+graph.add_edge(0, 2)
+graph.add_edge(0, 5)
+graph.add_edge(2, 1)
 graph.add_edge(2, 3)
+graph.add_edge(2, 4)
 graph.add_edge(3, 4)
- 
-# graph.print_graph()
+graph.add_edge(3, 5)
 
-graph.bfs(2)
+graph.print_graph()
 
